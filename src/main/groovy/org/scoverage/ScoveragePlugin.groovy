@@ -298,10 +298,8 @@ class ScoveragePlugin implements Plugin<PluginAware> {
                             it.logger.warn("Scala sub-project '${it.name}' doesn't have Scoverage applied and will be ignored in parent project aggregation")
                         }
                     }
-                    def childReportTasks = project.subprojects.findResults {
-                        it.tasks.find { task ->
-                            task.name == REPORT_NAME && task instanceof ScoverageAggregate
-                        }
+                    def childReportTasks = project.subprojects.collectMany {
+                        it.tasks.withType(ScoverageAggregate).matching { it.name == REPORT_NAME }
                     }
                     def allReportTasks = childReportTasks + globalReportTask.get()
                     def allSources = project.objects.fileCollection()
