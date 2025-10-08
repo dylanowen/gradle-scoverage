@@ -166,8 +166,8 @@ Migration to 3.x
 ```groovy
 // can safely delete this from build scripts
 dependencies {
-    scoverage group: 'org.scoverage', name: 'scalac-scoverage-plugin_2.12', version: '1.3.1'
-    scoverage group: 'org.scoverage', name: 'scalac-scoverage-runtime_2.12', version: '1.3.1'
+    scoverage 'org.scoverage:scalac-scoverage-plugin_2.12:1.3.1'
+    scoverage 'org.scoverage:scalac-scoverage-runtime_2.12:1.3.1'
 }
 ```
 

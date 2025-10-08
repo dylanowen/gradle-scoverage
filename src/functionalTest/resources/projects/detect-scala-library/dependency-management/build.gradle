@@ -11,10 +11,10 @@ description = 'defines scala library using the "implementation" configuration an
 
 dependencyManagement {
     dependencies {
-        dependency group: 'org.scala-lang', name: 'scala-library', version: "${detectedScalaLibraryVersion}"
+        dependency "org.scala-lang:scala-library:${detectedScalaLibraryVersion}"
     }
 }
 
 dependencies {
-    implementation group: 'org.scala-lang', name: 'scala-library'
+    implementation 'org.scala-lang:scala-library'
 }
